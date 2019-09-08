@@ -4,9 +4,12 @@ It's a Discord bot that you can use to roll dice
 ## Running
 
 You will need:
+- [A Discord bot](https://discordapp.com/developers/applications)
 - [Python](http://python.org/downloads)
 - Python's discord module<br>
   `pip install discord`
+
+Paste your Discord bot's token to into the dicebot.py file and run it.
 
 ## How to use
 format your messages in the format:
