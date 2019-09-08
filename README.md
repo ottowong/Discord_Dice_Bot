@@ -5,7 +5,7 @@ It's a Discord bot that you can use to roll dice
 
 You will need:
 - [A Discord bot](https://discordapp.com/developers/applications)
-- [Python](http://python.org/downloads)
+- [Python](http://python.org/downloads) (I used 3.7.2 but other versions might work idk)
 - Python's discord module<br>
   `pip install discord`
 
