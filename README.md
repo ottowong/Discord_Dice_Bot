@@ -12,19 +12,27 @@ You will need:
 Paste your Discord bot's token to into the dicebot.py file and run it.
 
 ## How to use
-format your messages in the format:
+Format your messages in the format:
  !r[number of dice]d[number of sides]
 
-for example:<br>
+For example:<br>
  `!r1d20`
 
-you can also add a modifier or roll multiple dice by adding:<br>
+You can also add a modifier or roll multiple dice by adding:<br>
  `+[number]`
 
-or<br>
+Or<br>
  `+[number of dice]d[number of sides]`
 
-to the end of your message. e.g.<br>
+To the end of your message. e.g.<br>
  `!r1d20+2d6+5`
+ 
+ You can subtract a number by adding:<br>
+ `+-[number]`
 
-do not roll more than 10 dice with more than 1000 sides with a modifier greater than 1000 or more than 10 different dice.
+As shorthand to roll 1d20 you can also do:<br>
+`!r`
+
+## Known Issues
+* If you do e.g. 1d20 +- 1d10 it will try to roll -1d10 rather than 1d10 and subtract the result
+* The +- syntax is annoying and I don't know how/can't be bothered to fix it
