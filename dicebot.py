@@ -1,6 +1,5 @@
 import discord
 from random import randint
-import pickle
 
 # These are set so that Harry doesn't roll millions of dice with millions of sides and crash the bot
 maxModifier = 1000
@@ -17,8 +16,8 @@ you can also add a modifier or roll multiple dice by adding:
 ```+[number]```
 or
 ```+[number of dice]d[number of sides]```
-to the end of your message. e.g.
-```!r1d20+2d6+5```
+to the end of your message. If you want to subtract you will have to do "+-". e.g.
+```!r1d20+2d6+-5```
 do not roll more than """+str(maxNumberOfRolls)+""" dice with more than """+str(maxSides)+""" sides with a modifier greater than """+str(maxModifier)+""" or more than """+str(maxNumberOfDice)+""" different dice.
 """)
 
@@ -30,6 +29,7 @@ async def on_message(message):
     # if the sender of the message is the bot, don't do anything
     if (message.author == client.user):
         return
+
 
     counter = 0
     invalid = False
@@ -77,6 +77,7 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Game(name='!r help for how to use'))
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
@@ -87,4 +88,4 @@ async def on_ready():
 # token should be on this page:
 # discordapp.com/developers/applications/[your bot]/bots
 
-client.run('pasteTokenHere')
+client.run('TOKEN')
